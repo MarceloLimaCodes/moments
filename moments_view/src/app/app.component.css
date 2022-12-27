@@ -1,0 +1,6 @@
+.container {
+    /*criamos uma altura para o corpo do main deixando o footer lá em baixo e um pouco de scroll para podermos trabalhar*/
+    min-height: 65vh;
+    /*colocamos uma margem em cima para separar o main do header*/
+    margin-top: 1em;
+}

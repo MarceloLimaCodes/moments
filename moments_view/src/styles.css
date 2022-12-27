@@ -1,0 +1,70 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Cambria;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #bdbdbd;
+    transition: .4s;
+}
+
+a:hover {
+    color: #dec129;
+}
+
+/* FORM DEFAULT GLOBAL*/
+form {
+    width: 450px;
+    margin: 0 auto;                 /* Centralização do formulário na tela */
+}
+
+.form-group {
+    display: flex;                  /* O display flex e o alinhamento em coluna foram colocados em todos em todas as divs form-group*/
+    flex-direction: column;         /* que contém direção do flex em coluna. */
+    margin-bottom: 1em;
+}
+
+.form-group label {                 /* Estilização básica do label que está dentro da classe form-group*/
+    font-weight: bold;
+    font-size: .9em;
+    margin-bottom: .4em;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: .6em;
+    color: #777;
+    font-size: .8em;
+}
+
+input[type="submit"] {
+    background-color: #efefef;
+
+    border: 2px solid transparent;
+    padding: .6em 1em;              /* O primeiro valor sempre é cima/baixo e o segundo esquerda/direita */
+
+    font-weight: bold;
+    font-size: 1.1em;
+
+    cursor: pointer;
+    transition: .4s;
+}
+
+input[type="submit"]:hover {
+    color: #dec129;
+    border-color: #dec129;
+    background-color: transparent;
+}
+
+.validation-error {
+    color: #dc3545;
+    border-left: 3px solid #dc3545;     /* Criando uma leve borda vermelha a esquerda da caixa da mensagem de erro*/
+    
+    margin-top: .4em;
+    padding-left: .2em;
+
+    font-weight: bold;
+}
