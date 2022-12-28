@@ -1,0 +1,16 @@
+<div class="message" *ngIf="messagesService.message">  
+    <div class="message-header">
+        <h2>Mensagem do Sistema:</h2>
+
+        <button class="clear" (click)="messagesService.clear()" >
+            <fa-icon [icon]="faTimesIcon" ></fa-icon>
+        </button>
+    </div>
+    
+    <p>{{ messagesService.message }}</p>
+</div>
+
+<!-- 
+    A mensagem só é validada como true no ngIf se houver alguma mensagem dentro dele, se for uma string vazia é considerada false e o
+    template não é renderizado na tela
+ -->

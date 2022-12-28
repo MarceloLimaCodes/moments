@@ -1,2 +1,10 @@
 <h2>Compartilhe o seu <span>Momento</span>!</h2>
-<app-moment-form [btnText]="btnText"></app-moment-form>
+<app-moment-form 
+    [btnText]="btnText" 
+    (onSubmit)="createHandler($event)" 
+></app-moment-form>
+
+<!-- 
+    (onSubmit) é o evento criado disparado após a validação de todos os dados do formulário mandando eles através do evento.(filho)
+    O "new-moment"(pai), pega os dados emitidos pelo evento(filho) através da função createHandler($event), podendo ser acessado agora dentro da sua classe
+ -->

@@ -30,8 +30,47 @@
 
     <div class="form-group" >
         <label for="image">Insira a foto do momento:</label>
-        <input type="file">
+        <input type="file" (change)="onFileSelected($event)">
     </div>
 
     <input type="submit" value="{{ btnText }}" >
 </form>
+
+<!-- 
+    (ngSubmit)="submit()":
+        Método que é disparado após o evento de submit, que no caso seria clicar no botão "Compartilhar" que é um input type submit
+
+    [formGroup]="momentForm":
+        Declaração de um grupo de formulários para o angular poder mapear os inputs e após isso disparar as validações. Esses inputs
+        serão gravados dentro da propriedade "momentForm", criada dentro da classe do componente com o tipo FormGroup.
+
+    #formDir="ngForm":
+        o formDir trabalha junto com o formGroup, conseguindo validar cada campo do input. Nesse exemplo usei a propriedade 
+        "formDir.submitted". A diretiva #formDir cria uma referência para o FormGroup do formulário e permite acessar suas propriedades e métodos a partir do template da sua aplicação.
+
+        Colocamos a propriedade: (  formControlName="title"  ) para o formDir poder conseguir validar corretamente esse campo.
+
+    *ngIf="title.invalid && formDir.submitted":
+        É aqui onde nossa validação ocorre, colocamos essa propriedade em uma div para validar se o formulário foi enviado(submitted)
+        e também se title está preenchido. Caso o campo não esteja preenchido e o envio do formulário foi solicitado, essa validação
+        se torna true em ambos os casos, daí a mensagem de erro é printada na tela. Nesse caso ela também seria enviada, essa validação
+        é somente para printar a mensagem de erro.
+        
+        Para evitar que a requisição seja enviada, criamos uma validação na classe desse componente dentro da função de submit(), veja:
+            if(this.momentForm.invalid) {
+                return;
+            }
+
+    *ngIf="title.errors?.['required']":
+        Aqui especificamos exatamente o erro que pode acontecer, pegando a base o Validators.required, colocamos "?" dizendo que essa 
+        propriedade não é obrigatória mas ela pode ocorrer em algum momento, já que o 'title' se encontra vazio no momento mas será
+        preenchido futuramente com um possível erro, caso ele ocorra, de forma específica ao required, ele irá aparecer, poderiamos usar
+        para outros tipos de erros também.
+
+    RESUMO:
+        ngOnInit é responsável por instânciar o formGroup e com cada formControl em cada input. 
+        Ao depender do formControl, a validação é executada verificando: title.invalid && formDir.submitted, se isso for verdadeiro ele faz outra verificação:
+        *ngIf="title.errors?.['required']", fazendo o  print da mensagem, caso tudo der certo, as mensagens não aparecem e os valores
+        são enviados corretamente.
+            
+ -->
