@@ -1,0 +1,74 @@
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.home-container h1 {
+    margin-bottom: .6em;
+}
+
+.moments-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    max-width: 80%;
+    margin: auto;
+
+    justify-content: space-between;
+}
+
+.moment {
+    width: 32%;             /* cada div moment vai ocupar 32% da largura da tela */
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.moment img {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.moment h3, .moment p {
+    margin-bottom: .7em;
+}
+
+.moment .date {
+    font-size: .7em;
+    font-style: italic;
+}
+
+a {
+    padding: .3em .6em;
+}
+
+a:hover {
+    background-color: #fff;
+    border: 1px solid #dec129;
+}
+
+/* BUSCA */
+
+.search-container {
+    margin-bottom: 2em;
+    width: 100%;
+  /*   background-color: blue;    <= use para entender como foi o jogo de porcentagem no width para posicionar o input corretamente */
+}
+
+.search-container form {
+    position: relative;
+    width: 30%;                             /* <= dos 100% do container o form irá ocupar 30%*/
+}
+
+.search-container fa-icon {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+.search-container input {
+    padding: .5em;
+    width: 100%;                            /* preenchendo 100% dos 30% do form, ja que o input está dentro do form */
+    text-align: center;                     /* lembrando que o input está posicionado de acordo com o flex direction colum */
+}

@@ -12,7 +12,7 @@ import { MessagesService } from 'src/app/services/messages.service';
   styleUrls: ['./new-moment.component.css']
 })
 export class NewMomentComponent {
-  btnText = 'Compartilhar'
+  btnText: string = 'Compartilhar'
 
   constructor(
     private momentService: MomentService,

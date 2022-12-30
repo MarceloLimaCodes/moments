@@ -1,0 +1,19 @@
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    padding: 2em;
+}
+
+h2, p {
+    margin-bottom: 1em;
+}
+
+.about a {
+    text-decoration: underline;
+}
+
+
+

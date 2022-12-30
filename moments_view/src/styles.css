@@ -46,6 +46,8 @@ input[type="submit"] {
     border: 2px solid transparent;
     padding: .6em 1em;              /* O primeiro valor sempre é cima/baixo e o segundo esquerda/direita */
 
+    width: 100%;
+
     font-weight: bold;
     font-size: 1.1em;
 
@@ -68,3 +70,41 @@ input[type="submit"]:hover {
 
     font-weight: bold;
 }
+
+/* BUTTONS */
+
+.edit-btn, .remove-btn {
+    border: 1px solid #efefef;
+    padding: .4em 1em;
+    font-size: 1em;
+    margin: 0 .5em;
+    cursor: pointer;
+    background-color: #fff;
+    transition: .4s;
+}
+
+button fa-icon, a fa-icon {
+    margin-right: .2em;
+}
+
+.edit-btn, .edit-btn path {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.edit-btn:hover, .edit-btn:hover path {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.remove-btn, .remove-btn path {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+.remove-btn:hover, .remove-btn:hover path {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+
